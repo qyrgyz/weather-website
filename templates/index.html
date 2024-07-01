@@ -1,0 +1,131 @@
+<!-- Extend the base HTML template -->
+{% extends "base.html" %}
+
+<!-- Set the title for the page -->
+{% block title %}Weather World - Home{% endblock %}
+
+<!-- Content block to insert main content -->
+{% block content %}
+
+<!-- Check if weather data is available -->
+{% if weather_data %}
+
+<!-- Main container for all widgets -->
+<div class="container-fluid">
+    <div class="row">
+        <!-- Main Weather Widget and Hourly Forecast on the left -->
+        <div class="col-lg-7 col-md-6 col-sm-12 left-column">
+            <!-- Main Weather Widget -->
+            <div class="main-widget weather-card mb-4">
+                <div class="weather-content row">
+<div class="col-md-4 text-left">
+                        <h2 class="poppins-bold city-name">{{ weather_data['name'] }}</h2>
+                        <h3 class="poppins-bold main-temp">{{ weather_data['main']['temp'] | int }}{% if unit == 'metric' %}°C{% else %}°F{% endif %}</h3>
+                        <p class="poppins-bold feels-like">Feels like: {{ weather_data['main']['feels_like'] | int}}{% if unit == 'metric' %}°C{% else %}°F{% endif %}</p>
+                        <div class="sun-times">
+                            <div class="sun-time">
+                                <img src="{{ url_for('static', filename='images/sunrise.png') }}" alt="Sunrise Icon" class="sun-icon">
+                                <div>
+                                    <p class="sun-time-title">Sunrise</p>
+                                    <p class="sun-time-value">{{ weather_data['sys']['sunrise'] | timestamp_to_hour }}</p>
+                                </div>
+                            </div>
+                            <div class="sun-time">
+                                <img src="{{ url_for('static', filename='images/sunset.png') }}" alt="Sunset Icon" class="sun-icon">
+                                <div>
+                                    <p class="sun-time-title">Sunset</p>
+                                    <p class="sun-time-value">{{ weather_data['sys']['sunset'] | timestamp_to_hour }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="weather-center">
+                            <img src="{{ url_for('static', filename='images/weather_icons/' ~ weather_icon) }}" alt="Weather Icon" class="weather-icon">
+                            <p id="weather-description" class="poppins-bold weather-description">{{ simple_description }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-left">
+                        <div class="weather-details-container">
+                            <div class="weather-detail">
+                                <div>
+                                    <p class="weather-detail-title">UV</p>
+                                    <p class="weather-detail-value">{{ weather_data['uv_index'] }}</p>
+                                </div>
+                                <img src="{{ url_for('static', filename='images/uv.png') }}" alt="UV Index Icon" class="detail-icon">
+                            </div>
+                            <div class="weather-detail">
+                                <div>
+                                    <p class="weather-detail-title">Wind Speed</p>
+                                    <p class="weather-detail-value">{{ weather_data['wind']['speed'] }}{% if unit == 'metric' %} km/h{% else %} mph{% endif %}</p>
+                                </div>
+                                <img src="{{ url_for('static', filename='images/wind_speed.png') }}" alt="Wind Speed Icon" class="detail-icon">
+                            </div>
+                            <div class="weather-detail">
+                                <div>
+                                    <p class="weather-detail-title">Pressure</p>
+                                    <p class="weather-detail-value">{{ weather_data['main']['pressure'] }} hPa</p>
+                                </div>
+                                <img src="{{ url_for('static', filename='images/pressure.png') }}" alt="Pressure Icon" class="detail-icon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Hourly Forecast -->
+            <div class="hourly-forecast weather-section text-center mb-4">
+                <h3>Hourly Forecast</h3>
+                <div class="row">
+                    {% for forecast in hourly_forecast_data['list'][:5] %}
+                    <div class="col-sm-2 forecast-item">
+                        <div class="forecast-time">{{ forecast['dt'] | timestamp_to_hour }}</div>
+                        <div class="forecast-icon">
+                            <img src="{{ url_for('static', filename='images/weather_icons/' ~ WEATHER_ICON_MAP[forecast['weather'][0]['icon']]) }}" alt="weather icon">
+                        </div>
+                        <div class="forecast-temp">{{ forecast['main']['temp'] | int }}{% if unit == 'metric' %}°C{% else %}°F{% endif %}</div>
+                        <img src="{{ url_for('static', filename='images/wind_speed.png') }}" alt="Wind Speed Icon" class="detail-icon">
+                        <div class="forecast-wind">{{ forecast['wind']['speed'] | int }}{% if unit == 'metric' %} km/h{% else %} mph{% endif %}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- Weekly Forecast on the right -->
+        <div class="col-lg-5 col-md-6 col-sm-12 right-column">
+            <div class="weekly-forecast weather-section text-center">
+                <h3>Weekly Forecast</h3>
+                <div class="weekly-forecast-container">
+                    {% for i in range(7) %}
+                    <div class="weekly-forecast-item">
+                        <div class="weekly-forecast-day">{{ weekly_forecast_data['list'][i]['dt'] | timestamp_to_time }}</div>
+                        <div class="weekly-forecast-icon">
+                            <img src="{{ url_for('static', filename='images/weather_icons/' ~ WEATHER_ICON_MAP[weekly_forecast_data['list'][i]['weather'][0]['icon']]) }}" alt="weather icon">
+                        </div>
+                        <div class="weekly-forecast-description">{{ weekly_forecast_data['list'][i]['weather'][0]['main'] | title }}</div>
+                        <div class="weekly-forecast-temp">
+                            <div class="temp-container">
+                                <span class="weekly-max-temp">{{ weekly_forecast_data['list'][i]['temp']['max'] | int }}°{% if unit == 'metric' %}C{% else %}F{% endif %}</span>
+                                <span class="slash"> / </span>
+                                <span class="weekly-min-temp">{{ weekly_forecast_data['list'][i]['temp']['min'] | int }}°{% if unit == 'metric' %}C{% else %}F{% endif %}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Display an error message if city is not found -->
+{% elif error_message %}
+<div class="alert alert-danger" role="alert">
+    {{ error_message }}
+</div>
+<!-- Prompt user to enter a city if no data is available -->
+{% else %}
+<p>Enter a city to get the weather information.</p>
+{% endif %}
+
+{% endblock %}

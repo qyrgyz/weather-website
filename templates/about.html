@@ -1,0 +1,71 @@
+<!-- Extend the base HTML template -->
+{% extends "base.html" %}
+
+<!-- Set the title for the About Us page -->
+{% block title %}Weather World - About Us{% endblock %}
+
+<!-- Content block to insert the main content -->
+{% block content %}
+<!-- About Us section container -->
+<div id="about-us" class="content-section">
+    <!-- About Us section header -->
+    <h2 class="poppins-bold subheading">About Us</h2>
+    <p class="poppins-semibold subheading">Get to know us better!</p>
+    
+    <!-- Container for the columns -->
+    <div class="columns">
+        
+        <!-- Why Choose Us section -->
+        <div class="why-choose-us">
+            <h2 class="poppins-bold">Why You Should Choose Us</h2>
+            
+            <!-- Features list -->
+            <div class="features">
+                <!-- Feature: Accurate Forecasts -->
+                <div class="feature">
+                    <img src="/static/images/accurate-forecast.png" alt="Accurate Forecasts">
+                    <h3>Accurate Forecasts</h3>
+                </div>
+                
+                <!-- Feature: Real-Time Alerts -->
+                <div class="feature">
+                    <img src="/static/images/real-time-alerts.png" alt="Real-Time Alerts">
+                    <h3>Real-Time Alerts</h3>
+                </div>
+                
+                <!-- Feature: User-Friendly Interface -->
+                <div class="feature">
+                    <img src="/static/images/user-friendly-interface.png" alt="User-Friendly Interface">
+                    <h3>User-Friendly Interface</h3>
+                </div>
+            </div>
+            
+            <!-- Large Weather World logo image -->
+            <img src="/static/images/big-logo.png" alt="Weather World Big Logo" class="big-logo">
+        </div>
+        
+        <!-- Team section -->
+        <div class="team-section">
+            <h2 class="poppins-bold">Meet The Team</h2>
+            <p class="poppins-semibold">
+                The meaning of innovation in WeatherWorld is providing accurate, reliable, and real-time weather information to our users. WeatherWorld, with expertise in meteorology and technology, offers an advanced platform accessible via both website and mobile app. Our platform is designed to empower users to make informed decisions, whether for personal planning or professional purposes. Choose WeatherWorld for its user-friendly interface, comprehensive coverage, and commitment to helping you stay ahead of the weather.
+            </p>
+            <p class="poppins-semibold">
+                Our dedicated team of meteorologists, data scientists, and software engineers work tirelessly to ensure the highest quality of weather information. Their combined expertise ensures that WeatherWorld remains at the forefront of innovation in weather forecasting and climate analysis.
+            </p>
+            
+            <!-- Team members contact information -->
+            <div class="team-members">
+                <!-- Team member contact -->
+                <a href="mailto:abdulla.khatiov@ue-germany.de" class="team-member">Abdulla Khatiov<br>abdulla.khatiov@ue-germany.de</a>
+                <!-- Team member contact -->
+                <a href="mailto:artem.burov@ue-germany.de" class="team-member">Artem Burov<br>artem.burov@ue-germany.de</a>
+                <!-- Team member contact -->
+                <a href="mailto:oleh.kichchak@ue-germany.de" class="team-member">Oleh Kihichak<br>oleh.kihichak@ue-germany.de</a>
+                <!-- Team member contact -->
+                <a href="mailto:ivanandres.bustillo@ue-germany.de" class="team-member">Ivan Andres Bustillo<br>ivanandres.bustillo@ue-germany.de</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,1520 @@
+/* Importing SF Pro Display font with Medium weight */
+@font-face { /* Begin defining a font-face */
+    font-family: 'SF Pro Display'; /* Name of the font family */
+    src: url('../fonts/SFProDisplay-Medium.eot'); /* Path to the EOT font file */
+    src: local('SF Pro Display Medium'), local('SFProDisplay-Medium'), /* Local sources for the font */
+        url('../fonts/SFProDisplay-Medium.eot?#iefix') format('embedded-opentype'), /* EOT format with IE fix */
+        url('../fonts/SFProDisplay-Medium.woff2') format('woff2'), /* Path to WOFF2 font file */
+        url('../fonts/SFProDisplay-Medium.woff') format('woff'), /* Path to WOFF font file */
+        url('../fonts/SFProDisplay-Medium.ttf') format('truetype'); /* Path to TrueType font file */
+    font-weight: 500; /* Set the font weight to 500 (medium) */
+    font-style: normal; /* Set the font style to normal */
+}
+
+/* Importing SF Pro Display font with Bold weight */
+@font-face { /* Begin defining another font-face */
+    font-family: 'SF Pro Display'; /* Name of the font family */
+    src: url('../fonts/SFProDisplay-Bold.eot'); /* Path to the EOT font file */
+    src: local('SF Pro Display Bold'), local('SFProDisplay-Bold'), /* Local sources for the font */
+        url('../fonts/SFProDisplay-Bold.eot?#iefix') format('embedded-opentype'), /* EOT format with IE fix */
+        url('../fonts/SFProDisplay-Bold.woff2') format('woff2'), /* Path to WOFF2 font file */
+        url('../fonts/SFProDisplay-Bold.woff') format('woff'), /* Path to WOFF font file */
+        url('../fonts/SFProDisplay-Bold.ttf') format('truetype'); /* Path to TrueType font file */
+    font-weight: bold; /* Set the font weight to bold */
+    font-style: normal; /* Set the font style to normal */
+}
+
+/* Importing SF Pro Display font with Regular weight */
+@font-face { /* Begin defining another font-face */
+    font-family: 'SF Pro Display'; /* Name of the font family */
+    src: url('../fonts/SFProDisplay-Regular.eot'); /* Path to the EOT font file */
+    src: local('SF Pro Display Regular'), local('SFProDisplay-Regular'), /* Local sources for the font */
+        url('../fonts/SFProDisplay-Regular.eot?#iefix') format('embedded-opentype'), /* EOT format with IE fix */
+        url('../fonts/SFProDisplay-Regular.woff2') format('woff2'), /* Path to WOFF2 font file */
+        url('../fonts/SFProDisplay-Regular.woff') format('woff'), /* Path to WOFF font file */
+        url('../fonts/SFProDisplay-Regular.ttf') format('truetype'); /* Path to TrueType font file */
+    font-weight: normal; /* Set the font weight to normal */
+    font-style: normal; /* Set the font style to normal */
+}
+
+/* Set default font family and color for body, labels, and buttons */
+body, label, button { /* Apply styles to body, label, and button elements */
+    font-family: "Poppins", sans-serif; /* Use Poppins font with sans-serif fallback */
+    font-style: normal; /* Set the font style to normal */
+    color: #2c2c6c; /* Set the text color */
+}
+
+/* Background settings for the body */
+body { /* Apply styles to the body element */
+    background: url('../images/mountains.png') no-repeat center center fixed; /* Set background image, no repeat, centered, and fixed */
+    background-size: cover; /* Cover the entire background */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+/* Different backgrounds based on weather conditions */
+body.sunny { /* Apply styles when body has class 'sunny' */
+    background: url('../images/gifs/sunny.gif') no-repeat center center fixed; /* Set sunny background image */
+    background-size: cover; /* Cover the entire background */
+}
+
+body.rainy { /* Apply styles when body has class 'rainy' */
+    background: url('../images/gifs/rainy.gif') no-repeat center center fixed; /* Set rainy background image */
+    background-size: cover; /* Cover the entire background */
+}
+
+body.cloudy { /* Apply styles when body has class 'cloudy' */
+    background: url('../images/gifs/cloudy.gif') no-repeat center center fixed; /* Set cloudy background image */
+    background-size: cover; /* Cover the entire background */
+}
+
+body.snowy { /* Apply styles when body has class 'snowy' */
+    background: url('../images/gifs/snowy.gif') no-repeat center center fixed; /* Set snowy background image */
+    background-size: cover; /* Cover the entire background */
+}
+
+body.drizzle { /* Apply styles when body has class 'drizzle' */
+    background: url('../images/gifs/drizzle.gif') no-repeat center center fixed; /* Set drizzle background image */
+    background-size: cover; /* Cover the entire background */
+}
+
+body.thunderstorm { /* Apply styles when body has class 'thunderstorm' */
+    background: url('../images/gifs/thunderstorm.gif') no-repeat center center fixed; /* Set thunderstorm background image */
+    background-size: cover; /* Cover the entire background */
+}
+
+body.misty { /* Apply styles when body has class 'misty' */
+    background: url('../images/gifs/misty.gif') no-repeat center center fixed; /* Set misty background image */
+    background-size: cover; /* Cover the entire background */
+}
+
+/* Primary background color class */
+.bg-primary { /* Apply primary background color */
+    background-color: #363B64 !important; /* Use important to override other styles */
+}
+
+/* Footer styles */
+footer { /* Apply styles to the footer element */
+    position: relative; /* Position relative to the nearest positioned ancestor */
+    bottom: 0; /* Align at the bottom */
+    padding: 20px 90px; /* Use padding for spacing */
+    color: white; /* Set text color to white */
+    font-family: 'SF Pro Display'; /* Use SF Pro Display font */
+    font-weight: 500; /* Set font weight to 500 (medium) */
+    font-style: normal; /* Set font style to normal */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+.footer a { /* Apply styles to anchor tags inside footer */
+    color: white; /* Set text color to white */
+    margin: 0 10px; /* Add margin for spacing */
+}
+
+.footer a img { /* Apply styles to images inside anchor tags in footer */
+    width: 30px; /* Set image width */
+    height: 30px; /* Set image height */
+}
+
+/* Header and Navigation */
+header { /* Apply styles to the header element */
+  padding: 10px 90px; /* Use padding for spacing */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+  width: 100%; /* Set width to 100% */
+  flex-wrap: wrap; /* Allow flex items to wrap */
+}
+
+header img { /* Apply styles to images in header */
+    max-height: 50px; /* Set maximum height for images */
+}
+
+header nav a { /* Apply styles to anchor tags in header navigation */
+    color: white; /* Set text color to white */
+    margin: 0 15px; /* Add margin for spacing */
+    text-decoration: none; /* Remove underline from text */
+    font-size: 20px; /* Set font size */
+    font-weight: normal; /* Set font weight to normal */
+}
+
+header nav a:hover { /* Apply styles to anchor tags on hover */
+    color: white; /* Ensure text color remains white on hover */
+}
+
+header .unit-toggle,
+header #geoButton { /* Apply styles to unit toggle and geolocation button */
+  margin-left: 10px; /* Add left margin */
+}
+
+header .searchbar { /* Apply styles to the search bar */
+  flex-grow: 1; /* Allow search bar to grow */
+  margin-right: auto; /* Align search bar to the left */
+}
+header .search-container { /* Apply styles to the search container */
+  flex-grow: 1; /* Allow search container to grow */
+  margin-right: 20px; /* Add right margin */
+}
+
+header nav a.active { /* Apply styles to active navigation link */
+    font-family: 'SF Pro Display'; /* Use SF Pro Display font */
+    font-weight: bold; /* Set font weight to bold */
+    font-style: normal; /* Set font style to normal */
+    text-decoration: underline; /* Underline the text */
+}
+
+.logo { /* Apply styles to logo */
+    width: 130px; /* Set logo width */
+    height: 50px; /* Set logo height */
+}
+
+.home { /* Apply styles to home element */
+    padding-left: 10px; /* Add left padding */
+}
+
+.contact { /* Apply styles to contact element */
+    margin-right: 5px; /* Add right margin */
+    margin-left: 15px; /* Add left margin */
+}
+
+.header-wrapper,
+.footer-wrapper { /* Apply styles to header and footer wrappers */
+    width: 100%; /* Set width to 100% */
+}
+
+/* Search Form */
+.search-container { /* Apply styles to search container */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    border: 2px solid white; /* Add white border */
+    border-radius: 25px; /* Round the corners */
+    padding: 5px 10px; /* Add padding */
+    background-color: rgba(255, 255, 255, 0.7); /* Use semi-transparent white background */
+    width: 100%;  /* Set width to 100% */
+    max-width: none; /* Remove max-width constraint */
+    position: relative; /* Position relative to containing block */
+}
+
+.search-container input[type="text"] { /* Apply styles to text input inside search container */
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
+    background: transparent; /* Make background transparent */
+    width: calc(100% - 40px); /* Set width, accounting for button size */
+    padding: 5px 10px; /* Add padding */
+    font-size: 16px; /* Set font size */
+    box-sizing: border-box; /* Include padding in element's total width */
+}
+
+header nav { /* Apply styles to header navigation */
+  display: flex; /* Use flexbox for layout */
+  gap: 20px; /* Add gap between items */
+  flex-wrap: nowrap; /* Prevent items from wrapping */
+}
+header .nav-links { /* Apply styles to navigation links */
+  display: flex; /* Use flexbox for layout */
+  gap: 20px; /* Add gap between items */
+  flex-wrap: nowrap; /* Prevent items from wrapping */
+}
+.search-container button { /* Apply styles to button inside search container */
+    background: transparent; /* Make background transparent */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor to pointer */
+    position: absolute; /* Position absolutely */
+    right: 15px; /* Position 15px from right */
+    top: 50%; /* Position at 50% vertically */
+    transform: translateY(-50%); /* Center button vertically */
+    width: 25px; /* Set button width */
+    height: 25px; /* Set button height */
+    background-image: url('../images/magn_glass.png'); /* Set background image */
+    background-size: contain; /* Contain the background image */
+    background-repeat: no-repeat; /* Prevent background repeat */
+    background-position: center; /* Center the background image */
+    background-color: transparent; /* Ensure background color is transparent */
+}
+
+/* Unit toggle buttons */
+.unit-toggle { /* Apply styles to unit toggle */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    background: #fff; /* Set background color to white */
+    border-radius: 25px; /* Round the corners */
+    box-shadow: 0 0 5px rgba(0,0,0,0.1); /* Add shadow */
+    margin-left: 10px; /* Add left margin */
+    width: 100px; /* Set width */
+    height: 35px; /* Set height */
+    font-weight: 700; /* Set font weight to 700 (bold) */
+}
+
+input[type="radio"].unit-toggle+ label { /* Apply styles to radio buttons with class unit-toggle and their labels */
+    text-align: center; /* Center align text */
+    min-width: 50px; /* Set minimum width */
+    min-height: 35px; /* Set minimum height */
+    padding: 5px; /* Add padding */
+    border-radius: 15px; /* Round the corners */
+    margin: 0px; /* Remove margin */
+}
+
+input[type="radio"].unit-toggle:checked + label { /* Apply styles to checked radio buttons with class unit-toggle and their labels */
+    text-align: center; /* Center align text */
+    min-width: 50px; /* Set minimum width */
+    min-height: 35px; /* Set minimum height */
+    background-color: #2c2c6c; /* Set background color */
+    color: #ffffff; /* Set text color to white */
+    padding: 5px; /* Add padding */
+    border-radius: 15px; /* Round the corners */
+    margin: 0px; /* Remove margin */
+}
+
+/* Weather Widget Styles */
+.weather-card, .hourly-forecast, .weekly-forecast { /* Apply styles to weather card, hourly forecast, and weekly forecast */
+    background: rgba(255, 255, 255, 0.5); /* Use semi-transparent white background */
+    border-radius: 25px; /* Round the corners */
+    padding: 30px; /* Add padding */
+    color: #282828; /* Set text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    margin-bottom: 30px; /* Add bottom margin */
+}
+
+.hourly-forecast .row { /* Apply styles to rows in hourly forecast */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-around; /* Distribute space evenly */
+}
+
+.weather-icon { /* Apply styles to weather icons */
+    width: 280px; /* Set width */
+    height: auto; /* Set height to auto */
+}
+
+.weather-center { /* Apply styles to weather center */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items in a column */
+    align-items: center; /* Center align items */
+    justify-content: center; /* Center align items vertically */
+}
+
+.weather-description { /* Apply styles to weather description */
+    margin-top: 10px; /* Add top margin */
+    font-size: 1.5rem; /* Set font size */
+    flex-direction: row; /* Arrange items in a row */
+    color: #363B64; /* Set text color */
+}
+
+.sun-times { /* Apply styles to sun times */
+    margin-top: 50px; /* Add top margin */
+}
+
+.sun-time { /* Apply styles to individual sun time */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center align items */
+    margin-bottom: 10px; /* Add bottom margin */
+}
+
+.sun-time img { /* Apply styles to images in sun time */
+    margin-right: 10px; /* Add right margin */
+}
+
+.sun-icon, .detail-icon { /* Apply styles to sun and detail icons */
+    width: 40px; /* Set width */
+    height: 40px; /* Set height */
+}
+
+.weather-detail { /* Apply styles to weather details */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center align items */
+    justify-content: flex-end; /* Align items to the end */
+    margin-bottom: 10px; /* Add bottom margin */
+}
+
+.weather-detail img { /* Apply styles to images in weather details */
+    margin-left: 10px; /* Add left margin */
+}
+
+.weather-detail div { /* Apply styles to div in weather details */
+    text-align: right; /* Align text to the right */
+}
+
+.weather-detail p,
+.sun-time p { /* Apply styles to paragraphs in weather details and sun time */
+    margin: 0; /* Remove margin */
+}
+
+.weather-details-container { /* Apply styles to weather details container */
+    margin-top: 110px; /* Add top margin */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items in a column */
+}
+
+.weather-content { /* Apply styles to weather content */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Distribute space evenly */
+    align-items: flex-start; /* Align items to the start */
+}
+
+.city-name { /* Apply styles to city name */
+    font-size: 2rem; /* Set font size */
+}
+
+.main-temp { /* Apply styles to main temperature */
+    font-size: 3rem; /* Set font size */
+    color: #363B64; /* Set text color */
+}
+
+.feels-like { /* Apply styles to feels-like temperature */
+    font-size: 1.2rem; /* Set font size */
+    color: #363B64; /* Set text color */
+}
+
+.sun-time-title,
+.weather-detail-title { /* Apply styles to sun time title and weather detail title */
+    font-size: 1.5rem; /* Set font size */
+    font-weight: bold; /* Set font weight to bold */
+    color: #363B64; /* Set text color */
+}
+
+.sun-time-value,
+.weather-detail-value { /* Apply styles to sun time value and weather detail value */
+    font-size: 1.2rem; /* Set font size */
+    font-weight: 600; /* Set font weight to 600 */
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+    color: #363B64; /* Set text color */
+}
+
+/* Styles for hourly forecast */
+.hourly-forecast h3 { /* Apply styles to h3 in hourly forecast */
+    font-size: 1.8rem; /* Set font size */
+    margin-bottom: 20px; /* Add bottom margin */
+    font-weight: bold; /* Set font weight to bold */
+    color: #363B64; /* Set text color */
+}
+
+.forecast-item { /* Apply styles to forecast item */
+    background: rgba(255, 255, 255, 0.5); /* Use semi-transparent white background */
+    border-radius: 30px; /* Round the corners */
+    padding: 15px; /* Add padding */
+    margin: 0 10px; /* Add horizontal margin */
+    text-align: center; /* Center align text */
+    color: #282828; /* Set text color */
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+}
+
+.forecast-time,
+.forecast-temp,
+.forecast-wind { /* Apply styles to forecast time, temperature, and wind */
+    font-size: 1.2rem; /* Set font size */
+    margin-top: 5px; /* Add top margin */
+    font-weight: 600; /* Set font weight to 600 */
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+}
+
+.forecast-icon img { /* Apply styles to images in forecast icon */
+    width: 60px; /* Set image width */
+    height: 60px; /* Set image height */
+}
+
+/* Styles for weekly forecast */
+.weekly-forecast h3 { /* Apply styles to h3 in weekly forecast */
+    margin-top: 15px; /* Add top margin */
+    font-size: 1.8rem; /* Set font size */
+    margin-bottom: 20px; /* Add bottom margin */
+    font-weight: bold; /* Set font weight to bold */
+    color: #363B64; /* Set text color */
+}
+
+.weekly-forecast-container { /* Apply styles to weekly forecast container */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items in a column */
+    border-radius: 10px; /* Round the corners */
+    margin: auto; /* Center align container */
+}
+
+.forecast-item.night { /* Apply styles to forecast item with class 'night' */
+    background: rgba(44, 62, 80, 0.7); /* Use darker background */
+    color: #ecf0f1; /* Set text color to light */
+}
+
+.forecast-item.morning { /* Apply styles to forecast item with class 'morning' */
+    background: rgba(255, 223, 186, 0.7); /* Use light background */
+    color: #2c3e50; /* Set text color to dark */
+}
+
+.forecast-item.day { /* Apply styles to forecast item with class 'day' */
+    background: rgba(251, 158, 0, 0.7); /* Use light blue background */
+    color: #2c3e50; /* Set text color to dark */
+}
+
+.weekly-forecast-item { /* Apply styles to weekly forecast item */
+    display: grid; /* Use grid layout */
+    grid-template-columns: 1fr 50px 2fr 1fr; /* Define grid columns */
+    align-items: center; /* Align items vertically */
+    padding: 4% 0; /* Add vertical padding */
+    font-size: 1.2rem; /* Set font size */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Add bottom border */
+}
+
+.weekly-forecast-item:last-child { /* Apply styles to last weekly forecast item */
+    border-bottom: none; /* Remove bottom border */
+}
+
+.weekly-forecast-day { /* Apply styles to weekly forecast day */
+    font-weight: bold; /* Set font weight to bold */
+    text-align: left; /* Align text to the left */
+    margin-right: 20px; /* Add right margin */
+}
+
+.weekly-forecast-icon { /* Apply styles to weekly forecast icon */
+    flex: 0 0 30px; /* Fixed size for icons */
+    justify-content: center; /* Center align icon */
+    display: flex; /* Use flexbox for layout */
+}
+
+.weekly-forecast-icon img { /* Apply styles to images in weekly forecast icon */
+    width: 40px; /* Set image width */
+    height: 40px; /* Set image height */
+}
+
+.weekly-forecast-description { /* Apply styles to weekly forecast description */
+    flex: 1; /* Allow to grow */
+    margin-left: 20px; /* Add left margin */
+    text-align: left; /* Align text to the left */
+    font-size: 1rem; /* Set font size */
+    color: #363B64; /* Set text color */
+    font-weight: 600; /* Set font weight to 600 */
+    font-style: normal; /* Set font style to normal */
+}
+
+.weekly-forecast-temp { /* Apply styles to weekly forecast temperature */
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-end; /* Align items to the end */
+}
+
+.container-fluid { /* Apply styles to container fluid */
+    padding-left: 15px; /* Add left padding */
+    padding-right: 15px; /* Add right padding */
+}
+
+.temp-container { /* Apply styles to temperature container */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+}
+.weekly-max-temp, .weekly-min-temp, .slash { /* Apply styles to weekly max temperature, min temperature, and slash */
+    margin: 0 2px; /* Add margin */
+}
+.temp-container .weekly-max-temp,
+.temp-container .weekly-min-temp,
+.temp-container .slash { /* Apply styles to temperature container elements */
+    margin: 0 2px; /* Add margin */
+}
+
+.weekly-forecast-temp .weekly-max-temp { /* Apply styles to weekly max temperature */
+    font-size: 1.3rem; /* Set font size */
+    font-weight: 700; /* Set font weight to 700 */
+    font-style: normal; /* Set font style to normal */
+    color: #363B64; /* Set text color */
+}
+
+.weekly-forecast-temp .weekly-min-temp { /* Apply styles to weekly min temperature */
+    font-size: 1rem; /* Set font size */
+    font-weight: 600; /* Set font weight to 600 */
+    font-style: normal; /* Set font style to normal */
+    color: #363B64; /* Set text color */
+}
+
+.poppins-bold { /* Apply styles to Poppins bold */
+    font-family: "Poppins", sans-serif; /* Use Poppins font */
+    font-weight: 700; /* Set font weight to 700 */
+    font-style: normal; /* Set font style to normal */
+}
+
+.main-widget,
+.hourly-forecast,
+.weekly-forecast { /* Apply styles to main widget, hourly forecast, and weekly forecast */
+    background: rgba(255, 255, 255, 0.5); /* Use semi-transparent white background */
+    border-radius: 25px; /* Round the corners */
+    padding: 30px; /* Add padding */
+    color: #282828; /* Set text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    margin-top: 20px; /* Add top margin */
+}
+
+/* Responsive styles for different screen sizes */
+@media (min-width: 0px) and (max-width: 768px) {
+    .main-widget, .hourly-forecast, .weekly-forecast {
+        padding: 25px;
+        max-width: 100%;
+    }
+    .weather-icon {
+        width: 250px;
+        height: 230px;
+    }
+    .weather-description {
+        font-size: 1.3rem;
+    }
+    .city-name {
+        font-size: 1.8rem;
+    }
+    .main-temp {
+        font-size: 2.5rem;
+    }
+    .feels-like {
+        font-size: 1.1rem;
+    }
+    .sun-time-title,
+    .weather-detail-title,
+    .hourly-forecast h3,
+    .weekly-forecast h3 {
+        font-size: 1.6rem;
+    }
+    .sun-time-value,
+    .weather-detail-value,
+    .forecast-time,
+    .forecast-temp,
+    .forecast-wind,
+    .weekly-forecast-day,
+    .weekly-forecast-temp .weekly-max-temp,
+    .weekly-forecast-temp .weekly-min-temp {
+        font-size: 1.1rem;
+    }
+
+    .weekly-forecast-description {
+        margin-left: 0;
+    }
+
+    .col-sm-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 60px !important;
+        padding-right: 60px !important;
+
+  }
+
+}
+
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .main-widget, .hourly-forecast, .weekly-forecast {
+        padding: 30px;
+        max-width: 100%;
+    }
+    .weather-icon {
+        width: 275px;
+        height: 250px;
+
+    }
+
+      .col-md-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+
+    .weather-description {
+        font-size: 1.4rem;
+
+    }
+    .city-name {
+        font-size: 1.9rem;
+    }
+    .main-temp {
+        font-size: 2.8rem;
+    }
+    .feels-like {
+        font-size: 1.15rem;
+    }
+    .weather-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+
+    }
+    .weather-details-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    .weather-detail {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .weather-detail img {
+        width: 40px;
+        height: 40px;
+    }
+    .sun-time {
+        display: none;
+    }
+    .sun-time-title,
+    .weather-detail-title,
+    .hourly-forecast h3,
+    .weekly-forecast h3 {
+        font-size: 1.7rem;
+    }
+    .sun-time-value,
+    .weather-detail-value,
+    .forecast-time,
+    .forecast-temp,
+    .forecast-wind,
+    .weekly-forecast-day,
+    .weekly-forecast-temp .weekly-max-temp,
+    .weekly-forecast-temp .weekly-min-temp {
+        font-size: 1.15rem;
+    }
+    .weekly-forecast-description {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1400px) {
+    .main-widget, .hourly-forecast, .weekly-forecast {
+        padding: 30px;
+        max-width: 900px;
+    }
+    .weather-icon {
+        width: 300px;
+        height: 280px;
+    }
+    .weather-description {
+        font-size: 1.5rem;
+    }
+    .city-name {
+        font-size: 2rem;
+    }
+    .main-temp {
+        font-size: 3rem;
+    }
+    .feels-like {
+        font-size: 1.2rem;
+    }
+    .sun-time-title,
+    .weather-detail-title,
+    .hourly-forecast h3,
+    .weekly-forecast h3 {
+        font-size: 1.8rem;
+    }
+    .sun-time-value,
+    .weather-detail-value,
+    .forecast-time,
+    .forecast-temp,
+    .forecast-wind,
+    .weekly-forecast-day,
+    .weekly-forecast-temp .weekly-max-temp,
+    .weekly-forecast-temp .weekly-min-temp {
+        font-size: 1.2rem;
+    }
+
+
+    .weekly-forecast-description {
+        margin-left: 0;
+    }
+}
+
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .searchbar {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Content Sections */
+.content { /* Apply styles to content */
+    width: 100%; /* Set width to 100% */
+}
+.content-section { /* Apply styles to content section */
+    border-radius: 15px; /* Round the corners */
+    margin: 20px auto; /* Center align with margin */
+    background-color: rgba(255, 255, 255, 0.5); /* Use semi-transparent white background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+    padding: 30px 50px 20px; /* Add padding */
+    display: block; /* Display as block */
+    overflow: auto; /* Add overflow */
+    max-width: 90%; /* Set max width */
+    width: 2160px; /* Set width */
+}
+
+.columns { /* Apply styles to columns */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Distribute space evenly */
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+/* Styling for "Why Choose Us" and "Meet the Team" sections */
+.why-choose-us,
+.team-section { /* Apply styles to why choose us and team section */
+    text-align: center; /* Center align text */
+    flex: 1; /* Allow to grow */
+    padding: 20px 70px; /* Add padding */
+    min-width: 500px; /* Set minimum width */
+}
+
+/* Big logo in the "Why Choose Us" section */
+.big-logo { /* Apply styles to big logo */
+    display: block; /* Display as block */
+    margin: 70px auto 0 auto; /* Center align with margin */
+    width: 100%; /* Set width to 100% */
+    justify-content: center; /* Center align content */
+}
+
+.features { /* Apply styles to features */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Arrange items in a row */
+    justify-content: center; /* Center align content */
+    margin-top: 13px; /* Add top margin */
+    gap: 20px; /* Add gap between items */
+    text-align: center; /* Center align text */
+}
+
+/* Feature cards styling */
+.feature { /* Apply styles to feature */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items in a column */
+    align-items: center; /* Center align items */
+    min-width: 180px; /* Set minimum width */
+    min-height: 180px; /* Set minimum height */
+    gap: 10px; /* Add gap between items */
+    padding: 40px 10px; /* Add padding */
+    border: 1px solid #363B64; /* Add border */
+    border-radius: 10px; /* Round the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    transition: transform 0.3s; /* Add transition for transform */
+}
+
+/* Hover effect for feature cards */
+.feature:hover { /* Apply styles on hover */
+    transform: translateY(-5px); /* Move up 5px */
+}
+
+.feature img { /* Apply styles to images in feature */
+    height: 50px; /* Set image height */
+    width: 50px; /* Set image width */
+}
+
+.team-section h2,
+.why-choose-us h2 { /* Apply styles to h2 in team section and why choose us */
+    color: #363B64; /* Set text color */
+    text-align: center; /* Center align text */
+}
+
+.team-section p,
+.why-choose-us p { /* Apply styles to paragraphs in team section and why choose us */
+    text-align: justify; /* Justify align text */
+}
+
+/* Styling for team members section */
+.team-members { /* Apply styles to team members */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Arrange items in a row */
+    flex-wrap: wrap; /* Allow items to wrap */
+    gap: 20px; /* Add gap between items */
+    justify-content: center; /* Center align content */
+}
+
+/* Team member cards styling */
+.team-member { /* Apply styles to team member */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center align content */
+    align-items: center; /* Center align items */
+    flex: 1 1 230px; /* Set flex properties */
+    background: #363B64; /* Set background color */
+    color: white; /* Set text color */
+    padding: 10px; /* Add padding */
+    border-radius: 5px; /* Round the corners */
+    text-align: center; /* Center align text */
+    text-decoration: none; /* Remove text decoration */
+    font-weight: bold; /* Set font weight to bold */
+    transition: background 0.3s; /* Add transition for background */
+    max-width: 325px; /* Set max width */
+    min-height: 100px; /* Set minimum height */
+}
+
+/* Hover effect for team member cards */
+.team-member:hover { /* Apply styles on hover */
+    background: #5c66ae; /* Set background color */
+}
+
+/* Forms */
+.subheading { /* Apply styles to subheading */
+    text-align: center; /* Center align text */
+    color: #363B64; /* Set text color */
+}
+
+input { /* Apply styles to input */
+    width: 100%; /* Set width to 100% */
+    padding: 10px; /* Add padding */
+    box-sizing: border-box; /* Include padding and border in element's total width */
+    background: none; /* Remove background */
+    outline: none; /* Remove outline */
+    resize: none; /* Prevent resizing */
+    border: 0; /* Remove border */
+    transition: all .3s; /* Add transition */
+    border-bottom: 2px solid #2c2c6c; /* Add bottom border */
+}
+
+input:focus { /* Apply styles on focus */
+    border-bottom: 2px solid rgb(105, 105, 234); /* Change bottom border color */
+}
+
+/* Contact Us section specific styling */
+#contact-us.columns { /* Apply styles to contact us columns */
+    justify-content: space-around; /* Distribute space evenly */
+    padding: 20px; /* Add padding */
+}
+
+.contact-info { /* Apply styles to contact info */
+    background: #363B64; /* Set background color */
+    color: #FFF; /* Set text color */
+    padding: 60px; /* Add padding */
+    border-radius: 35px; /* Round the corners */
+    max-width: 40%; /* Set max width */
+    flex: 1; /* Allow to grow */
+    box-sizing: border-box; /* Include padding and border in element's total width */
+}
+
+/* Decorative circles in the contact info section */
+.circle { /* Apply styles to circle */
+    position: absolute; /* Position absolutely */
+    border-radius: 50%; /* Make it round */
+}
+
+.circle.small { /* Apply styles to small circle */
+    width: 120px; /* Set width */
+    height: 120px; /* Set height */
+    bottom: 90px; /* Position from bottom */
+    left: 420px; /* Position from left */
+    background-color: #272A43; /* Set background color */
+}
+
+/* Larger circle */
+.circle.large { /* Apply styles to large circle */
+    width: 200px; /* Set width */
+    height: 200px; /* Set height */
+    bottom: -30px; /* Position from bottom */
+    left: 450px; /* Position from left */
+    background-color: #2E3255; /* Set background color */
+}
+
+.contact-info h3 { /* Apply styles to h3 in contact info */
+    font-size: 1.5rem; /* Set font size */
+    margin-bottom: 20px; /* Add bottom margin */
+}
+
+.contact-info p { /* Apply styles to paragraphs in contact info */
+    margin-bottom: 50px; /* Add bottom margin */
+}
+
+.contact-info i { /* Apply styles to icons in contact info */
+    margin-right: 10px; /* Add right margin */
+}
+
+/* Contact form styling */
+.contact-form { /* Apply styles to contact form */
+    padding: 30px; /* Add padding */
+    border-radius: 8px; /* Round the corners */
+}
+
+.contact-form .form-label { /* Apply styles to form labels in contact form */
+    font-weight: bold; /* Set font weight to bold */
+    color: #2c2c6c; /* Set text color */
+}
+
+.form-label { /* Apply styles to form label */
+    padding: 10px; /* Add padding */
+}
+
+/* Styling for the form group */
+.form-group { /* Apply styles to form group */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    margin-bottom: 20px; /* Add bottom margin */
+}
+
+/* Styling for inline radio buttons */
+.form-check-inline { /* Apply styles to inline radio buttons */
+    margin-right: 20px; /* Add right margin */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+}
+
+/* Hide the default radio button */
+.contact-form .form-check-input { /* Apply styles to form check input in contact form */
+    display: none; /* Hide the element */
+}
+
+/* Styling for labels */
+.contact-form .form-check-label { /* Apply styles to form check label in contact form */
+    position: relative; /* Position relative to containing block */
+    padding-left: 30px; /* Add left padding */
+    cursor: pointer; /* Change cursor to pointer */
+    font-weight: 600; /* Set font weight to 600 */
+    color: #2c2c6c; /* Set text color */
+}
+
+/* Custom radio button */
+.contact-form .form-check-label::before { /* Apply styles to before pseudo-element of form check label */
+    content: ''; /* Add content */
+    position: absolute; /* Position absolutely */
+    left: 0; /* Position from left */
+    top: 50%; /* Position from top */
+    transform: translateY(-50%); /* Center vertically */
+    width: 20px; /* Set width */
+    height: 20px; /* Set height */
+    border: 2px solid #2c2c6c; /* Add border */
+    border-radius: 50%; /* Make it round */
+    background-color: transparent; /* Make background transparent */
+}
+
+/* Background color when checked */
+.contact-form .form-check-input:checked + .form-check-label::before { /* Apply styles to before pseudo-element of checked form check label */
+    background-color: #2c2c6c; /* Set background color */
+}
+
+/* Inner circle when checked */
+.contact-form .form-check-input:checked + .form-check-label::after { /* Apply styles to after pseudo-element of checked form check label */
+    content: ''; /* Add content */
+    position: absolute; /* Position absolutely */
+    left: 6px; /* Position from left */
+    top: 50%; /* Position from top */
+    transform: translateY(-50%); /* Center vertically */
+    width: 8px; /* Set width */
+    height: 8px; /* Set height */
+    background-color: white; /* Set background color */
+    border-radius: 50%; /* Make it round */
+}
+
+/* Other input styles */
+.contact-form .form-control { /* Apply styles to form control in contact form */
+    border: 2px solid #363B64; /* Add border */
+    border-radius: 4px; /* Round the corners */
+    padding: 15px; /* Add padding */
+    margin-bottom: 15px; /* Add bottom margin */
+    background-color: transparent; /* Make background transparent */
+}
+
+/* Primary button styles */
+.btn-primary { /* Apply styles to primary button */
+    background-color: #363B64; /* Set background color */
+    border-color: #363B64; /* Set border color */
+    color: #FFF; /* Set text color */
+    border-radius: 4px; /* Round the corners */
+    padding: 10px 20px; /* Add padding */
+    font-size: 1rem; /* Set font size */
+}
+
+/* Primary button hover state */
+.btn-primary:hover { /* Apply styles on hover */
+    background-color: #1A1A4A; /* Change background color */
+    border-color: #1A1A4A; /* Change border color */
+}
+
+/* Radio Buttons Styling */
+input[type="radio"] { /* Apply styles to radio inputs */
+    display: none; /* Hide the element */
+    min-height: 10px; /* Set minimum height */
+    text-align: center; /* Center align text */
+}
+
+input[type="radio"] + label { /* Apply styles to labels next to radio inputs */
+    text-align: center; /* Center align text */
+    min-width: 100px; /* Set minimum width */
+    min-height: 50px; /* Set minimum height */
+    padding: 5px; /* Add padding */
+    border-radius: 10px; /* Round the corners */
+}
+
+/* Secondary button styles */
+.btn-secondary { /* Apply styles to secondary button */
+    color: #fff; /* Set text color */
+    background-color: #2c2c6c; /* Set background color */
+    border-color: #2c2c6c; /* Set border color */
+    border-radius: 1.5rem; /* Round the corners */
+}
+
+.btn-secondary:hover { /* Apply styles on hover */
+    background-color: #1A1A4A; /* Change background color */
+    border-color: #1A1A4A; /* Change border color */
+}
+
+.left-column { /* Apply styles to left column */
+    padding-left: 5.5rem; /* Add left padding */
+}
+
+.right-column { /* Apply styles to right column */
+    padding-right: 6rem; /* Add right padding */
+}
+
+.align-items-center { /* Apply styles to elements with align-items-center class */
+    align-items: center !important; /* Center align items with importance */
+}
+
+.justify-content-between { /* Apply styles to elements with justify-content-between class */
+    justify-content: space-between !important; /* Distribute space evenly with importance */
+}
+
+.d-flex { /* Apply styles to elements with d-flex class */
+    display: flex !important; /* Use flexbox for layout with importance */
+}
+/* Responsive styles for smaller screens */
+/* Example styles for extra small devices */
+
+/* Styles for small devices with a maximum width of 600px */
+@media (max-width: 600px) {
+    /* Main widget, hourly forecast, and weekly forecast adjustments */
+    .main-widget, .hourly-forecast, .weekly-forecast {
+        padding: 20px; /* Add padding of 20px */
+        max-width: 100%; /* Set maximum width to 100% */
+    }
+    /* Weather icon size adjustments */
+    .weather-icon {
+        width: 200px; /* Set width to 200px */
+        height: 180px; /* Set height to 180px */
+    }
+    /* Weather description font size adjustment */
+    .weather-description {
+        font-size: 1.2rem; /* Set font size to 1.2rem */
+    }
+    /* City name font size adjustment */
+    .city-name {
+        font-size: 1.5rem; /* Set font size to 1.5rem */
+    }
+    /* Large circle width adjustment */
+    .circle.large{
+        width: 0; /* Set width to 0 */
+    }
+    /* Small circle width adjustment */
+    .circle.small{
+        width: 0; /* Set width to 0 */
+    }
+    /* Main temperature font size adjustment */
+    .main-temp {
+        font-size: 2rem; /* Set font size to 2rem */
+    }
+    /* Feels-like temperature font size adjustment */
+    .feels-like {
+        font-size: 1rem; /* Set font size to 1rem */
+    }
+    /* Various titles font size adjustment */
+    .sun-time-title,
+    .weather-detail-title,
+    .hourly-forecast h3,
+    .weekly-forecast h3 {
+        font-size: 1.5rem; /* Set font size to 1.5rem */
+    }
+    /* Various value font size adjustment */
+    .sun-time-value,
+    .weather-detail-value,
+    .forecast-time,
+    .forecast-temp,
+    .forecast-wind,
+    .weekly-forecast-day,
+    .weekly-forecast-temp .weekly-max-temp,
+    .weekly-forecast-temp .weekly-min-temp {
+        font-size: 1rem; /* Set font size to 1rem */
+    }
+    /* Weekly forecast description margin adjustment */
+    .weekly-forecast-description {
+        margin-left: 0; /* Set margin-left to 0 */
+    }
+    /* Header adjustments */
+    header {
+        flex-direction: column; /* Set flex-direction to column */
+        align-items: center; /* Center-align items */
+    }
+    /* Search bar width and margin adjustments */
+    .searchbar {
+        width: 100%; /* Set width to 100% */
+        margin-bottom: 10px; /* Set margin-bottom to 10px */
+    }
+    /* Navigation links adjustments */
+    .nav-links {
+        flex-direction: column; /* Set flex-direction to column */
+        align-items: center; /* Center-align items */
+    }
+    /* Body font size adjustment */
+    body {
+        font-size: 18px; /* Set font size to 18px */
+    }
+    /* Content section padding adjustments */
+    .content-section {
+        padding: 30px 10px 20px; /* Set padding to 30px top, 10px sides, 20px bottom */
+    }
+    /* Header and footer wrapper adjustments */
+    .header-wrapper, .footer-wrapper {
+        flex-direction: row; /* Set flex-direction to row */
+    }
+    /* Contact us section adjustments */
+    #contact-us {
+        display: flex; /* Set display to flex */
+        flex-direction: column; /* Set flex-direction to column */
+    }
+    /* Contact info width adjustment */
+    .contact-info {
+        max-width: 100%; /* Set maximum width to 100% */
+    }
+    /* Contact form width adjustment */
+    .contact-form {
+        max-width: 100%; /* Set maximum width to 100% */
+    }
+    /* Features section adjustments */
+    .features {
+        flex-direction: column; /* Set flex-direction to column */
+    }
+    /* Large circle width adjustment */
+    .circle.large{
+        width: 0; /* Set width to 0 */
+    }
+    /* Small circle width adjustment */
+    .circle.small{
+        width: 0; /* Set width to 0 */
+    }
+    /* Form group display adjustment */
+    .form-group {
+        display: block; /* Set display to block */
+    }
+    /* Why choose us and team section adjustments */
+    .why-choose-us,
+    .team-section {
+        text-align: center; /* Center-align text */
+        flex: 1; /* Set flex to 1 */
+        padding: 20px 0px; /* Set padding to 20px top and bottom */
+        min-width: auto; /* Set minimum width to auto */
+    }
+}
+
+/* Styles for devices with a minimum width of 600px and a maximum width of 768px */
+@media (min-width: 600px) and (max-width: 768px) {
+    /* Body font size adjustment */
+    body {
+        font-size: 18px; /* Set font size to 18px */
+    }
+    /* Header and footer wrapper adjustments */
+    .header-wrapper, .footer-wrapper {
+        flex-direction: row; /* Set flex-direction to row */
+    }
+    /* Contact us section adjustments */
+    #contact-us {
+        display: flex; /* Set display to flex */
+        flex-direction: column; /* Set flex-direction to column */
+    }
+    /* Contact info width adjustment */
+    .contact-info {
+        max-width: 100%; /* Set maximum width to 100% */
+    }
+    /* Contact form width adjustment */
+    .contact-form {
+        max-width: 100%; /* Set maximum width to 100% */
+    }
+    /* Features section adjustments */
+    .features {
+        flex-direction: column; /* Set flex-direction to column */
+    }
+    /* Large circle width adjustment */
+    .circle.large{
+        width: 0; /* Set width to 0 */
+    }
+    /* Small circle width adjustment */
+    .circle.small{
+        width: 0; /* Set width to 0 */
+    }
+    /* Form group display adjustment */
+    .form-group {
+        display: block; /* Set display to block */
+    }
+    /* Main widget, hourly forecast, and weekly forecast adjustments */
+    .main-widget, .hourly-forecast, .weekly-forecast {
+        padding: 25px; /* Add padding of 25px */
+        max-width: 100%; /* Set maximum width to 100% */
+    }
+    /* Weather icon size adjustments */
+    .weather-icon {
+        width: 250px; /* Set width to 250px */
+        height: 230px; /* Set height to 230px */
+    }
+    /* Large circle width adjustment */
+    .circle.large{
+        width: 0; /* Set width to 0 */
+    }
+    /* Small circle width adjustment */
+    .circle.small{
+        width: 0; /* Set width to 0 */
+    }
+    /* Weather description font size adjustment */
+    .weather-description {
+        font-size: 1.3rem; /* Set font size to 1.3rem */
+    }
+    /* City name font size adjustment */
+    .city-name {
+        font-size: 1.8rem; /* Set font size to 1.8rem */
+    }
+    /* Main temperature font size adjustment */
+    .main-temp {
+        font-size: 2.5rem; /* Set font size to 2.5rem */
+    }
+    /* Feels-like temperature font size adjustment */
+    .feels-like {
+        font-size: 1.1rem; /* Set font size to 1.1rem */
+    }
+    /* Various titles font size adjustment */
+    .sun-time-title,
+    .weather-detail-title,
+    .hourly-forecast h3,
+    .weekly-forecast h3 {
+        font-size: 1.6rem; /* Set font size to 1.6rem */
+    }
+    /* Various value font size adjustment */
+    .sun-time-value,
+    .weather-detail-value,
+    .forecast-time,
+    .forecast-temp,
+    .forecast-wind,
+    .weekly-forecast-day,
+    .weekly-forecast-temp .weekly-max-temp,
+    .weekly-forecast-temp .weekly-min-temp {
+        font-size: 1.1rem; /* Set font size to 1.1rem */
+    }
+    /* Weekly forecast description margin adjustment */
+    .weekly-forecast-description {
+        margin-left: 0; /* Set margin-left to 0 */
+    }
+    /* Header adjustments */
+    header {
+        flex-direction: column; /* Set flex-direction to column */
+        align-items: center; /* Center-align items */
+    }
+    /* Search bar width and margin adjustments */
+    .searchbar {
+        width: 100%; /* Set width to 100% */
+        margin-bottom: 10px; /* Set margin-bottom to 10px */
+    }
+    /* Navigation links adjustments */
+    .nav-links {
+        flex-direction: column; /* Set flex-direction to column */
+        align-items: center; /* Center-align items */
+    }
+}
+
+/* Styles for devices with a minimum width of 768px and a maximum width of 992px */
+@media (min-width: 768px) and (max-width: 992px) {
+    /* Body font size adjustment */
+    body {
+        font-size: 18px; /* Set font size to 18px */
+    }
+    /* Header and footer wrapper adjustments */
+    .header-wrapper, .footer-wrapper {
+        flex-direction: row; /* Set flex-direction to row */
+    }
+    /* Contact us section adjustments */
+    #contact-us {
+        display: flex; /* Set display to flex */
+        flex-direction: column; /* Set flex-direction to column */
+    }
+    /* Contact info width adjustment */
+    .contact-info {
+        max-width: 100%; /* Set maximum width to 100% */
+    }
+    /* Contact form width adjustment */
+    .contact-form {
+        max-width: 100%; /* Set maximum width to 100% */
+    }
+    /* Features section adjustments */
+    .features {
+        flex-direction: column; /* Set flex-direction to column */
+    }
+    /* Large circle width adjustment */
+    .circle.large{
+        width: 0; /* Set width to 0 */
+    }
+    /* Small circle width adjustment */
+    .circle.small{
+        width: 0; /* Set width to 0 */
+    }
+    /* Form group display adjustment */
+    .form-group {
+        display: block; /* Set display to block */
+    }
+    /* Main widget, hourly forecast, and weekly forecast adjustments */
+    .main-widget, .hourly-forecast, .weekly-forecast {
+        padding: 30px; /* Add padding of 30px */
+        max-width: 100%; /* Set maximum width to 100% */
+    }
+    /* Weather icon size adjustments */
+    .weather-icon {
+        width: 275px; /* Set width to 275px */
+        height: 250px; /* Set height to 250px */
+    }
+    /* Weather description font size adjustment */
+    .weather-description {
+        font-size: 1.4rem; /* Set font size to 1.4rem */
+    }
+    /* City name font size adjustment */
+    .city-name {
+        font-size: 1.9rem; /* Set font size to 1.9rem */
+    }
+    /* Main temperature font size adjustment */
+    .main-temp {
+        font-size: 2.8rem; /* Set font size to 2.8rem */
+    }
+    /* Feels-like temperature font size adjustment */
+    .feels-like {
+        font-size: 1.15rem; /* Set font size to 1.15rem */
+    }
+    /* Large circle width adjustment */
+    .circle.large{
+        width: 0; /* Set width to 0 */
+    }
+    /* Small circle width adjustment */
+    .circle.small{
+        width: 0; /* Set width to 0 */
+    }
+    /* Various titles font size adjustment */
+    .sun-time-title,
+    .weather-detail-title,
+    .hourly-forecast h3,
+    .weekly-forecast h3 {
+        font-size: 1.7rem; /* Set font size to 1.7rem */
+    }
+    /* Various value font size adjustment */
+    .sun-time-value,
+    .weather-detail-value,
+    .forecast-time,
+    .forecast-temp,
+    .forecast-wind,
+    .weekly-forecast-day,
+    .weekly-forecast-temp .weekly-max-temp,
+    .weekly-forecast-temp .weekly-min-temp {
+        font-size: 1.15rem; /* Set font size to 1.15rem */
+    }
+    /* Weekly forecast description margin adjustment */
+    .weekly-forecast-description {
+        margin-left: 0; /* Set margin-left to 0 */
+    }
+    /* Header adjustments */
+    header {
+        flex-direction: row; /* Set flex-direction to row */
+        align-items: center; /* Center-align items */
+    }
+    /* Search bar width and margin adjustments */
+    .searchbar {
+        width: auto; /* Set width to auto */
+        margin-bottom: 0; /* Set margin-bottom to 0 */
+    }
+    /* Navigation links adjustments */
+    .nav-links {
+        flex-direction: row; /* Set flex-direction to row */
+        align-items: center; /* Center-align items */
+    }
+}
+
+/* Styles for devices with a minimum width of 992px and a maximum width of 1400px */
+@media (min-width: 992px) and (max-width: 1400px) {
+    /* Main widget, hourly forecast, and weekly forecast adjustments */
+    .main-widget, .hourly-forecast, .weekly-forecast {
+        padding: 30px; /* Add padding of 30px */
+        max-width: 900px; /* Set maximum width to 900px */
+    }
+    /* Weather icon size adjustments */
+    .weather-icon {
+        width: 300px; /* Set width to 300px */
+        height: 280px; /* Set height to 280px */
+    }
+    /* Weather description font size adjustment */
+    .weather-description {
+        font-size: 1.5rem; /* Set font size to 1.5rem */
+    }
+    /* City name font size adjustment */
+    .city-name {
+        font-size: 2rem; /* Set font size to 2rem */
+    }
+    /* Large circle width adjustment */
+    .circle.large{
+        width: 0; /* Set width to 0 */
+    }
+    /* Small circle width adjustment */
+    .circle.small{
+        width: 0; /* Set width to 0 */
+    }
+    /* Main temperature font size adjustment */
+    .main-temp {
+        font-size: 3rem; /* Set font size to 3rem */
+    }
+    /* Feels-like temperature font size adjustment */
+    .feels-like {
+        font-size: 1.2rem; /* Set font size to 1.2rem */
+    }
+    /* Various titles font size adjustment */
+    .sun-time-title,
+    .weather-detail-title,
+    .hourly-forecast h3,
+    .weekly-forecast h3 {
+        font-size: 1.8rem; /* Set font size to 1.8rem */
+    }
+    /* Various value font size adjustment */
+    .sun-time-value,
+    .weather-detail-value,
+    .forecast-time,
+    .forecast-temp,
+    .forecast-wind,
+    .weekly-forecast-day,
+    .weekly-forecast-temp .weekly-max-temp,
+    .weekly-forecast-temp .weekly-min-temp {
+        font-size: 1.2rem; /* Set font size to 1.2rem */
+    }
+    /* Weekly forecast description margin adjustment */
+    .weekly-forecast-description {
+        margin-left: 0; /* Set margin-left to 0 */
+    }
+    /* Header adjustments */
+    header {
+        flex-direction: row; /* Set flex-direction to row */
+        align-items: center; /* Center-align items */
+    }
+    /* Search bar width and margin adjustments */
+    .searchbar {
+        width: auto; /* Set width to auto */
+        margin-bottom: 0; /* Set margin-bottom to 0 */
+    }
+    /* Navigation links adjustments */
+    .nav-links {
+        flex-direction: row; /* Set flex-direction to row */
+        align-items: center; /* Center-align items */
+    }
+}
+
+/* Styles for devices with a minimum width of 1401px */
+@media (min-width: 1401px) {
+    /* Large circle left position adjustment */
+    .circle.large {
+        left: 70%; /* Set left position to 70% */
+    }
+    /* Small circle left position adjustment */
+    .circle.small {
+        left: 60%; /* Set left position to 60% */
+    }
+    /* Header adjustments */
+    header {
+        flex-direction: row; /* Set flex-direction to row */
+        align-items: center; /* Center-align items */
+    }
+    /* Search bar width and margin adjustments */
+    .searchbar {
+        width: auto; /* Set width to auto */
+        margin-bottom: 0; /* Set margin-bottom to 0 */
+    }
+    /* Navigation links adjustments */
+    .nav-links {
+        flex-direction: row; /* Set flex-direction to row */
+        align-items: center; /* Center-align items */
+    }
+}

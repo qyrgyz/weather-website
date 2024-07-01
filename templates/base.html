@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title block to allow dynamic title change -->
+    <title>{% block title %}Weather World{% endblock %}</title>
+    <!-- Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom styles CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+     <!-- Website Icon -->
+    <link rel="icon" type="image/x-icon" href="../static/images/favicon.ico">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+</head>
+<body class="d-flex flex-column min-vh-100 {{ weather_class }}">
+    <!-- Header wrapper -->
+    <div class="header-wrapper">
+        <!-- Header section -->
+<header class="d-flex justify-content-between align-items-center flex-wrap">
+  <!-- Logo with link to home page -->
+  <a href="/" class="logo"><img src="/static/images/logo.png" alt="Weather World Logo" class="logo"></a>
+  <div class="d-flex align-items-center searchbar flex-grow-1">
+    <!-- Search form -->
+    <form method="get" action="/" class="search-container d-flex flex-grow-1">
+      <input type="text" class="form-control" name="city" placeholder="Search city" aria-label="Search city" value="{{ city }}">
+      <button class="btn btn-primary" type="submit"></button>
+    </form>
+    <!-- Unit toggle buttons for Celsius and Fahrenheit -->
+    <div class="unit-toggle d-flex align-items-center">
+        <input type="radio" name="unit" value="metric" id="celsius" class="unit-toggle" {% if unit == 'metric' %}checked{% endif %}>
+        <label for="celsius">°C</label>
+        <input type="radio" name="unit" value="imperial" id="fahrenheit" class="unit-toggle" {% if unit == 'imperial' %}checked{% endif %}>
+        <label for="fahrenheit">°F</label>
+    </div>
+    <!-- Geolocation button -->
+    <button type="button" id="geoButton" class="btn btn-secondary ml-2">
+      <i class="bi bi-geo-alt-fill"></i>
+    </button>
+  </div>
+  <!-- Navigation links -->
+  <nav class="nav-links d-flex">
+    <a href="/" class="home {% if request.path == '/' %}active{% endif %}">Home</a>
+    <a href="/about" class="{% if request.path == '/about' %}active{% endif %}">About us</a>
+    <a href="/contact" class="contact {% if request.path == '/contact' %}active{% endif %}">Contacts</a>
+  </nav>
+</header>
+
+
+
+    </div>
+    <main class="content flex-grow-1">
+        <!-- Main content block -->
+        {% block content %}{% endblock %}
+    </main>
+    <!-- Footer wrapper -->
+    <div class="footer-wrapper">
+        <!-- Footer section -->
+        <footer class="footer bg-primary text-white d-flex justify-content-between align-items-center">
+            <p class="mb-0">&copy; UE-Project Inc. All rights reserved.</p>
+            <div class="d-flex justify-content-center">
+                <!-- Social media links -->
+                <a href="https://www.linkedin.com/in/artem-burov?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="text-white mx-2"><img src="{{ url_for('static', filename='images/linkedin.svg') }}" alt="LinkedIn Icon"></a>
+                <a href="https://www.linkedin.com/in/oleh-kihichak-09994127b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="text-white mx-2"><img src="{{ url_for('static', filename='images/linkedin.svg') }}" alt="LinkedIn Icon"></a>
+                <a href="https://www.linkedin.com/in/abdullakhaitov?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="text-white mx-2"><img src="{{ url_for('static', filename='images/linkedin.svg') }}" alt="LinkedIn Icon"></a>
+                <a href="https://www.linkedin.com/in/andres-bustillo-050a12278?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="text-white mx-2"><img src="{{ url_for('static', filename='images/linkedin.svg') }}" alt="LinkedIn Icon"></a>
+            </div>
+        </footer>
+    </div>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JavaScript bundle -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript file -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

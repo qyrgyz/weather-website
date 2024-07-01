@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}Weather World - Contact Us{% endblock %}
+{% block content %}
+
+<div id="contact-us" class="content-section">
+    <!-- Contact Us section header -->
+    <h2 class="poppins-bold subheading">Contact Us</h2>
+    <p class="poppins-semibold subheading">Any question or remarks? Just write us a message!</p>
+    <div id="contact-us" class="columns">
+        <!-- Contact information section -->
+        <div class="col-md-6 contact-info">
+            <h3 class="poppins-bold">Contact Information</h3>
+            <p class="poppins-semibold">Text us to start a live chat!</p>
+            <p> +49 331 236174310</p>
+            <p> weatherworld@gmail.com</p>
+            <p> Think Campus, Konrad-Zuse-Ring 11, 14469 Potsdam</p>
+            <div class="circle small"></div>
+            <div class="circle large"></div>
+        </div>
+        
+        <!-- Contact form section -->
+        <div class="col-md-6 contact-form">
+            <form method="POST" action="/contact">
+                <div class="row">
+                    <!-- First name input -->
+                    <div class="col-md-6 mb-3">
+                        <label for="first-name" class="form-label">First Name</label>
+                        <input type="text" name="first-name" id="first-name" placeholder="Jane">
+                    </div>
+                    <!-- Last name input -->
+                    <div class="col-md-6 mb-3">
+                        <label for="last-name" class="form-label">Last Name</label>
+                        <input type="text" name="last-name" id="last-name" placeholder="Doe">
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Email input -->
+                    <div class="col-md-6 mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="email" id="email" placeholder="user@email.com">
+                    </div>
+                    <!-- Phone number input -->
+                    <div class="col-md-6 mb-3">
+                        <label for="phone-number" class="form-label">Phone Number</label>
+                        <input type="tel" name="phone-number" id="phone-number" placeholder="+1 012 3456 789">
+                    </div>
+                </div>
+                <!-- Subject selection -->
+                <div class="form-group">
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="subject" id="general-questions" value="General Questions" checked>
+                        <label class="form-check-label" for="general-questions">General Questions</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="subject" id="app-questions" value="App Questions">
+                        <label class="form-check-label" for="app-questions">App Questions</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="subject" id="partner" value="Become our partner">
+                        <label class="form-check-label" for="partner">Become our partner</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="subject" id="suggestions" value="Suggestions">
+                        <label class="form-check-label" for="suggestions">App Suggestions</label>
+                    </div>
+                </div>
+                
+                <!-- Message textarea -->
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" name="message" id="message" rows="3" placeholder="Write your message..."></textarea>
+                </div>
+                <!-- Display error message if present -->
+                {% if error %}
+                    <p style="color: red;">{{ error }}</p>
+                {% endif %}
+                <!-- Submit button -->
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
